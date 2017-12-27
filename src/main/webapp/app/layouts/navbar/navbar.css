@@ -7,8 +7,10 @@ Navbar
 }
 
 .jh-navbar {
-    background-color: #353d47;
+    background-color: #ffffff;
     padding: .2em 1em;
+    height: 100px;
+    font-size: 14px;
 }
 
 .jh-navbar .profile-image {
@@ -18,8 +20,8 @@ Navbar
     border-radius: 50%;
 }
 
-.jh-navbar .dropdown-item.active, .jh-navbar .dropdown-item.active:focus, .jh-navbar .dropdown-item.active:hover {
-    background-color: #353d47;
+.jh-navbar .dropdown-item.active {
+    color: #333333;
 }
 
 .jh-navbar .dropdown-toggle::after {
@@ -30,12 +32,23 @@ Navbar
     padding: 0.5em;
 }
 
-.jh-navbar .navbar-nav .nav-item {
-    margin-left: 1.5rem;
+.jh-navbar .navbar-nav .nav-item li a {
+    padding-left: 1.5rem;
 }
 
 .jh-navbar a.nav-link {
     font-weight: 400;
+    color: #000;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    border-top: 5px solid;
+    border-color: transparent;
+}
+
+.jh-navbar li a.nav-link:hover, .jh-navbar li a.nav-link:focus {
+   background-color: #fb3100;
+   color: #ffffff;
+
 }
 
 .jh-navbar .jh-navbar-toggler {
@@ -45,9 +58,57 @@ Navbar
 }
 
 .jh-navbar .jh-navbar-toggler:hover {
-    color: #fff;
+    color: #fb3100;
 }
 
+ul.navbar-nav li {
+    border-left: 1px dotted #fb3100;
+    
+} 
+
+ul.dropdown-menu {
+    border-top: 5px solid #fb3100;
+    padding: 0px;
+    border-radius: 0px;
+}
+
+ul.dropdown-menu li {
+    border-left: none;
+    border-bottom: 1px solid #cccccc;
+    color: #efefef;
+    padding: 10px 0 10px 0;
+}
+
+ul.dropdown-menu li a {
+    background-color: #ffffff;
+    color: #333333;
+
+}
+
+ul.dropdown-menu li a:hover, ul.dropdown-menu li a:focus  {
+    background-color: #ffffff;
+    color:  ##fb3100;
+    font-weight: 400;
+
+}
+
+.jh-navbar .dropdown-item.active:focus, .jh-navbar .dropdown-item.active:hover {
+    color: ##fb3100;
+    font-weight: 400;
+
+
+}
+
+.dropdown-item.active:focus, .jh-navbar .dropdown-item.active:hover {
+    color: #fb3100;
+    font-weight: 400;
+}
+
+ul.navbar-nav li i, ul.dropdown-menu li i {
+    width: 20px;
+}
+
+ul. 
 @media screen and (min-width: 768px) {
     .jh-navbar-toggler {
         display: none;
@@ -72,16 +133,26 @@ Logo styles
     padding: 5px 15px;
 }
 
-.logo .logo-img {
-    height: 45px;
-    display: inline-block;
-    vertical-align: middle;
-    width: 70px;
+.jh-logo-container {
+    background: #333333;
 }
 
-.logo-img {
-    height: 100%;
-    background: url("../../../content/images/logo-jhipster.png") no-repeat center center;
+.logo  {
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #333333;
+    height: 47px;
+}
+
+.logo-img {  
+    display: inline-block;
+    vertical-align: middle;
+    height: 20px;
+    background: url("../../../content/images/bix-logo.png") no-repeat center center;
     background-size: contain;
-    width: 100%;
+    width: 12%;
+}
+
+.navbar-brand {
+    background: #333333;
 }
