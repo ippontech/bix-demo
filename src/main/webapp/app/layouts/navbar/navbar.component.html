@@ -10,26 +10,168 @@
     </div>
     <div class="navbar-collapse collapse" id="navbarResponsive" [ngbCollapse]="isNavbarCollapsed" [ngSwitch]="isAuthenticated()">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                <a class="nav-link" routerLink="/" (click)="collapseNavbar()">
+            <li *jhiHasAnyAuthority="['ROLE_ADMIN','ROLE_USER']" ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="bix-bank-accounts-menu">
                     <span>
-                        <i class="fa fa-home" aria-hidden="true"></i>
-                        <span jhiTranslate="global.menu.home">Home</span>
-                    </span>
-                </a>
-            </li>
-            <!-- jhipster-needle-add-element-to-menu - JHipster will add new menu items here -->
-            <li *ngSwitchCase="true" ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="entity-menu">
-                    <span>
-                        <i class="fa fa-th-list" aria-hidden="true"></i>
-                        <span jhiTranslate="global.menu.entities.main">
-                            Entities
-                        </span>
+                        <i class="fa fa-university" aria-hidden="true"></i>
+                        <span>Accounts</span>
                     </span>
                 </a>
                 <ul class="dropdown-menu" ngbDropdownMenu>
-                    <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
+                    <li>
+                        <a class="dropdown-item" routerLink="/" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-book" aria-hidden="true"></i>
+                            <span>Instructions</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="/" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-arrow-left" aria-hidden="true"></i>
+                            <span>Request Payment</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="/" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-arrow-right" aria-hidden="true"></i>
+                            <span>Send Payment</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="/" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-list" aria-hidden="true"></i>
+                            <span>List Transactions</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="/" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-user-plus" aria-hidden="true"></i>
+                            <span>Register</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li *jhiHasAnyAuthority="['ROLE_ADMIN','ROLE_USER']" ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="bix-bank-cards-menu">
+                    <span>
+                        <i class="fa fa-credit-card" aria-hidden="true"></i>
+                        <span>Cards</span>
+                    </span>
+                </a>
+                <ul class="dropdown-menu" ngbDropdownMenu>
+                    <li>
+                        <a class="dropdown-item" routerLink="/" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-book" aria-hidden="true"></i>
+                            <span>Instructions</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="/" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-arrow-right" aria-hidden="true"></i>
+                            <span>Send Payment</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="/" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-list" aria-hidden="true"></i>
+                            <span>List Transactions</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="/" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-user-plus" aria-hidden="true"></i>
+                            <span>Register</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li *jhiHasAnyAuthority="['ROLE_ADMIN','ROLE_USER']" ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="bix-coins-menu">
+                    <span>
+                        <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+                        <span>BIX Coins</span>
+                    </span>
+                </a>
+                <ul class="dropdown-menu" ngbDropdownMenu>
+                    <li>
+                        <a class="dropdown-item" routerLink="/" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-book" aria-hidden="true"></i>
+                            <span>Instructions</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="/" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-user-plus" aria-hidden="true"></i>
+                            <span>Register</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li *jhiHasAnyAuthority="['ROLE_ADMIN','ROLE_USER']" ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="bix-bitcoins-menu">
+                    <span>
+                        <i class="fa fa-btc" aria-hidden="true"></i>
+                        <span>Bitcoins</span>
+                    </span>
+                </a>
+                <ul class="dropdown-menu" ngbDropdownMenu>
+                    <li>
+                        <a class="dropdown-item" routerLink="/" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-book" aria-hidden="true"></i>
+                            <span>Instructions</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="/" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-user-plus" aria-hidden="true"></i>
+                            <span>Register</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li *jhiHasAnyAuthority="['ROLE_ADMIN','ROLE_USER']" ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="bix-documents-menu">
+                    <span>
+                        <i class="fa fa-info" aria-hidden="true"></i>
+                        <span>About BIX</span>
+                    </span>
+                </a>
+                <ul class="dropdown-menu" ngbDropdownMenu>
+                    <li>
+                        <a class="dropdown-item" routerLink="/" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-book" aria-hidden="true"></i>
+                            <span>Brochures</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="/" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-book" aria-hidden="true"></i>
+                            <span>White Papers</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="/" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-book" aria-hidden="true"></i>
+                            <span>Reports</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="/" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-registered" aria-hidden="true"></i>
+                            <span>Patents</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="/" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-play" aria-hidden="true"></i>
+                            <span>Video Clips</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="/" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-lock" aria-hidden="true"></i>
+                            <span>System Policies</span>
+                        </a>
+                    </li>
                 </ul>
             </li>
             <li *jhiHasAnyAuthority="'ROLE_ADMIN'" ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
